@@ -7,8 +7,8 @@ const app = express();
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'abdullahislam9191@gmail.com',
-        pass: 'jqyh liut mqut legn'
+        user: '',
+        pass: ''
     }
 })
 
@@ -26,14 +26,14 @@ app.use(express.json())
 app.post('/send-message', (req,res) =>{
     const formData = req.body;
     if (formData)
-      res.status(200).send({success: true, message: 'Submitted, nigga'})
+      res.status(200).send({success: true, message: 'Submitted'})
     else {
       res.send(404).send('<h1>Theres a problem</h1>')
     }
 
     const mailOptions = {
-        from: 'abdullahislam9191@gmail.com',
-        to: 'abdullahislam9191@gmail.com',
+        from: '',
+        to: '',
         subject: 'Virtual Acadmey',
         text: `\n${formData.name}\n${formData.email}\n${formData.message}`,
     }
